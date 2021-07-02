@@ -1,0 +1,299 @@
+{
+    "version": 1,
+    "key": "core.device_registry",
+    "data": {
+        "devices": [
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "OS"
+                    ]
+                ],
+                "manufacturer": "Home Assistant",
+                "model": "Home Assistant Operating System",
+                "name": "Home Assistant Operating System",
+                "sw_version": "6.1",
+                "entry_type": "service",
+                "id": "cdc4a32526406e2cf21df99bffde2945",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "49c34db8db337c6d75d2410297a68b79"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "met"
+                    ]
+                ],
+                "manufacturer": "Met.no",
+                "model": "Forecast",
+                "name": "Forecast",
+                "sw_version": null,
+                "entry_type": "service",
+                "id": "03b915ebe7a5c4a91baaba24f6d39840",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "d13a1ca806654ebd0078569cf92cd673"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "volumio",
+                        "5a86676f-2672-4782-804f-740d877616ce"
+                    ]
+                ],
+                "manufacturer": "Volumio",
+                "model": "pi",
+                "name": "Volumio",
+                "sw_version": "2.861",
+                "entry_type": null,
+                "id": "158fc4d5a002211ad1be62325b1e58d7",
+                "via_device_id": null,
+                "area_id": "salon",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "c6be78e1c9cbfa12a80cec49da2cb29c"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "mobile_app",
+                        "ff464d7c15e43f14"
+                    ]
+                ],
+                "manufacturer": "Xiaomi",
+                "model": "MI 9",
+                "name": "MI 9",
+                "sw_version": "29",
+                "entry_type": null,
+                "id": "b628edaf12d0a699bccbf8b421e113a8",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "a0d7b954_vscode"
+                    ]
+                ],
+                "manufacturer": "Home Assistant Community Add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "Visual Studio Code",
+                "sw_version": "3.4.1",
+                "entry_type": "service",
+                "id": "7a3f747d5dfdbb49a4e8030cfd6a4f07",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "a0d7b954_esphome"
+                    ]
+                ],
+                "manufacturer": "Home Assistant Community Add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "ESPHome",
+                "sw_version": "1.19.4",
+                "entry_type": "service",
+                "id": "312f2cd3f4ed12086f952c2c70773243",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "afb09c55f0749a15952cdad521d8102b"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "cast",
+                        "cd5e9d2d6a6bfbaa3c9581f71a100da5"
+                    ]
+                ],
+                "manufacturer": "Google Inc.",
+                "model": "MIBOX4",
+                "name": "MIBOX4",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "1b04c788b882f7a66671fdd9b91adfb5",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "core_ssh"
+                    ]
+                ],
+                "manufacturer": "Official add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "Terminal & SSH",
+                "sw_version": "9.1.3",
+                "entry_type": "service",
+                "id": "0fbc00829032e28b7ceccc0183841f80",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4b6c420e3c72bd51188a51f1685d1afc"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hacs",
+                        "0717a0cd-745c-48fd-9b16-c8534c9704f9-bc944b0f-fd42-4a58-a072-ade38d1444cd"
+                    ]
+                ],
+                "manufacturer": "hacs.xyz",
+                "model": "",
+                "name": "HACS",
+                "sw_version": "1.13.2",
+                "entry_type": "service",
+                "id": "d6653e4291fbe7ea2811ed8ed71f0d6e",
+                "via_device_id": null,
+                "area_id": "kotlownia",
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "2dc22df77ff1a5d7fc952303997e5691"
+                ],
+                "connections": [
+                    [
+                        "upnp",
+                        "uuid:75802409-bccb-40e7-8e6c-50642b18f5f3"
+                    ]
+                ],
+                "identifiers": [
+                    [
+                        "upnp",
+                        "uuid:75802409-bccb-40e7-8e6c-50642b18f5f3"
+                    ]
+                ],
+                "manufacturer": "Beijing Xiaomi Technology Co., Ltd.",
+                "model": "Wireless Router",
+                "name": "Xiaomi Mi R3G Wireless Router",
+                "sw_version": null,
+                "entry_type": null,
+                "id": "c69e1bcb73cfaac8710914c4bff80f2c",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "core_mosquitto"
+                    ]
+                ],
+                "manufacturer": "Official add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "Mosquitto broker",
+                "sw_version": "6.0.1",
+                "entry_type": "service",
+                "id": "07fe99d809874f2c87b1bc4ebebc7653",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "a0d7b954_nodered"
+                    ]
+                ],
+                "manufacturer": "Home Assistant Community Add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "Node-RED",
+                "sw_version": "9.1.4",
+                "entry_type": "service",
+                "id": "e17308a360e795ed906bed59a171cef1",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            },
+            {
+                "config_entries": [
+                    "4d12e268982068ca289dd508baac4c4f"
+                ],
+                "connections": [],
+                "identifiers": [
+                    [
+                        "hassio",
+                        "core_git_pull"
+                    ]
+                ],
+                "manufacturer": "Official add-ons",
+                "model": "Home Assistant Add-on",
+                "name": "Git pull",
+                "sw_version": "7.13.1",
+                "entry_type": "service",
+                "id": "0b1ee1e39c592c1d7c7f0f42cde1155f",
+                "via_device_id": null,
+                "area_id": null,
+                "name_by_user": null,
+                "disabled_by": null
+            }
+        ],
+        "deleted_devices": []
+    }
+}

@@ -1,0 +1,24 @@
+esphome:
+  name: podlewacz
+  platform: ESP8266
+  board: nodemcuv2
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "b1e36836d24b6e395d069b1d4ac86cc1"
+
+wifi:
+  ssid: "InstalujWirusa"
+  password: "BlaBlaBla123"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Podlewacz Fallback Hotspot"
+    password: "12345678"
+
+captive_portal:
