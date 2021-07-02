@@ -1,6 +1,11 @@
-
+homeassistant:
+  packages: !include_dir_named packagesC4
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
+
+sonoff:
+    username: !secret SonoffUsr
+    password: !secret Sonoffpwrd
 
 # Text to speech
 tts:

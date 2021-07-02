@@ -1,0 +1,333 @@
+
+#{"name":"c4s1","dev":"c4s1","v":0,"state":"ON","isFad":0,"aimV":0,"isW8t4Chng":1,"futSt":100,"ttc":7.0}
+
+light:
+  
+  ######################## test wlaczenia na czas ###################
+  - platform: mqtt
+    name: C4S1czasowy
+    schema: template
+    command_topic: "set/light/c4/s1"
+    command_on_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"ON\",\"futSt\":\"OFF\",\"ttc\":7}"
+    command_off_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s1"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+
+  ############################ koniec testu ##########################
+
+  ############################## 230V ###############################
+  - platform: mqtt
+    #friendly_name: "Światło garderoba - sypialnia"
+    name: c4s1
+    schema: template
+    command_topic: "set/light/c4/s1"
+    command_on_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s1"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+    
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s2
+    schema: template
+    command_topic: "set/light/c4/s2"
+    command_on_template: "{\"out\":\"s2\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s2\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s2"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s3
+    schema: template
+    command_topic: "set/light/c4/s3"
+    command_on_template: "{\"out\":\"s3\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s3\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s3"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s4
+    schema: template
+    command_topic: "set/light/c4/s4"
+    command_on_template: "{\"out\":\"s4\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s4\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s4"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s5
+    schema: template
+    command_topic: "set/light/c4/s5"
+    command_on_template: "{\"out\":\"s5\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s5\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s5"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+    ###################### 230v Koniec ########################
+
+    ################################ PWM #######################
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4pwm1
+    schema: template
+    command_topic: "set/light/c4/pwm1"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm1","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}
+      {% else %}"ON"{% endif %}{%- if transition is defined -%},"dur":{{ transition | round(1) }} {% endif %}}
+    command_off_template: "{\"out\":\"pwm1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm1"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4pwm2
+    schema: template
+    command_topic: "set/light/c4/pwm2"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm2","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}} 
+       {% else %}"ON"}{% endif %} 
+    command_off_template: "{\"out\":\"pwm2\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm2"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4pwm3
+    schema: template
+    command_topic: "set/light/c4/pwm3"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm3","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}} 
+       {% else %}"ON"}{% endif %} 
+    command_off_template: "{\"out\":\"pwm3\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm3"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4pwm4
+    schema: template
+    command_topic: "set/light/c4/pwm4"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm4","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}} 
+       {% else %}"ON"}{% endif %} 
+    command_off_template: "{\"out\":\"pwm4\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm4"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+    ################################ PWM Koniec ################
+
+######################################################################################################3    
+# {"type":"KZGinput","name":"c4p3","btnSt":"p","st":2,"isC":0,"isDblC":0,"isP":1,"isR":0,"isSw":1}
+switch:
+  - platform: mqtt
+    name: guiC4w1switch
+    unique_id: c4w1sw
+    #state_topic: "info/c4/c4s1"
+    command_topic: "info/c4/c4w1"
+    payload_on: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"p\",\"st\":2,\"isC\":0,\"isDblC\":0,\"isP\":1,\"isR\":0,\"isSw\":1}"
+    payload_off: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"r\",\"st\":2,\"isC\":0,\"isDblC\":0,\"isP\":1,\"isR\":0,\"isSw\":1}"
+    #state_on: "ON"
+    #state_off: "OFF"
+    #optimistic: false
+    value_template: >-
+      {% if value_json.isP==1 %}
+        "on"
+      {% else %}
+        "off" 
+      {% endif %}
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: guiC4w1click
+    unique_id: c4w1cl
+    #state_topic: "info/c4/c4s1"
+    command_topic: "info/c4/c4w1"
+    payload_on: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"p\",\"st\":2,\"isC\":1,\"isDblC\":0,\"isP\":0,\"isR\":1,\"isSw\":0}"
+    payload_off: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"r\",\"st\":2,\"isC\":0,\"isDblC\":0,\"isP\":0,\"isR\":1,\"isSw\":0}"
+    #state_on: "ON"
+    #state_off: "OFF"
+    value_template: >
+      {% if value_json.isC==1 %}
+        "click"
+      {% else %}
+        "off" 
+      {% endif %}
+    #optimistic: false
+    qos: 0
+    retain: true
+
+  - platform: mqtt
+    name: guiC4w1DblClick
+    #state_topic: "info/c4/c4s1"
+    command_topic: "info/c4/c4w1"
+    payload_on: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"p\",\"isC\":1,\"isDblC\":1,\"isP\":0,\"isR\":1,\"isSw\":0}"
+    payload_off: "{\"type\":\"KZGinput\",\"name\":\"c4w1\",\"btnSt\":\"r\",\"isC\":0,\"isDblC\":0,\"isP\":0,\"isR\":1,\"isSw\":0}"
+    #state_on: "ON"
+    #state_off: "OFF"
+    value_template: >
+      {% if value_json.isC==1 %}
+        "click"
+      {% else %}
+        "off" 
+      {% endif %}
+    #optimistic: false
+    qos: 0
+    retain: true
+
+
+sensor:
+  - platform: mqtt
+    name: c4ping
+    #friendly_name: "Włącznik Łazienka"
+    state_topic: "c4/Ping/"
+    unit_of_measurement: 'czas'
+
+  - platform: mqtt
+    name: c4w1
+    #friendly_name: "Włącznik Łazienka"
+    state_topic: "info/c4/c4w1"
+    unit_of_measurement: 'stan'
+    value_template: >
+      {% if value_json.isDblC==1 %}
+        DblClicked_{{ value_json.btnSt }}
+      {% else %}
+        {% if value_json.isC==1 %}
+          Clicked_{{ value_json.btnSt }}
+        {% else %}
+          {% if value_json.isSw==1 %}
+            Switched_{{ value_json.btnSt }}
+          {% else %}
+            {{ value_json.btnSt }}
+          {% endif %}
+        {% endif %} 
+      {% endif %}
+
+  - platform: mqtt
+    name: c4w2
+      #friendly_name: "Włącznik Łazienka"
+    state_topic: "info/c4/c4w2"
+    unit_of_measurement: 'stan'
+    value_template: >
+        {% if value_json.isDblC==1 %}
+          DblClicked_{{ value_json.btnSt }}
+        {% else %}
+          {% if value_json.isC==1 %}
+            Clicked_{{ value_json.btnSt }}
+          {% else %}
+            {% if value_json.isSw==1 %}
+              Switched_{{ value_json.btnSt }}
+            {% else %}
+              {{ value_json.btnSt }}
+            {% endif %}
+          {% endif %} 
+        {% endif %}
+
+  - platform: mqtt
+    name: c4w3
+        #friendly_name: "Włącznik Łazienka"
+    state_topic: "info/c4/c4w3"
+    unit_of_measurement: 'stan'
+    value_template: >
+          {% if value_json.isDblC==1 %}
+            DblClicked_{{ value_json.btnSt }}
+          {% else %}
+            {% if value_json.isC==1 %}
+              Clicked_{{ value_json.btnSt }}
+            {% else %}
+              {% if value_json.isSw==1 %}
+                Switched_{{ value_json.btnSt }}
+              {% else %}
+                {{ value_json.btnSt }}
+              {% endif %}
+            {% endif %} 
+          {% endif %}
+      
+  - platform: mqtt
+    name: c4w4
+         #friendly_name: "Włącznik Łazienka"
+    state_topic: "info/c4/c4w4"
+    unit_of_measurement: 'stan'
+    value_template: >
+            {% if value_json.isDblC==1 %}
+              DblClicked_{{ value_json.btnSt }}
+            {% else %}
+              {% if value_json.isC==1 %}
+                Clicked_{{ value_json.btnSt }}
+              {% else %}
+                {% if value_json.isSw==1 %}
+                  Switched_{{ value_json.btnSt }}
+                {% else %}
+                  {{ value_json.btnSt }}
+                {% endif %}
+              {% endif %} 
+            {% endif %}
+      
+  - platform: mqtt
+    name: c4w5
+            #friendly_name: "Włącznik Łazienka"
+    state_topic: "info/c4/c4w5"
+    unit_of_measurement: 'stan'
+    value_template: >
+              {% if value_json.isDblC==1 %}
+                DblClicked_{{ value_json.btnSt }}
+              {% else %}
+                {% if value_json.isC==1 %}
+                  Clicked_{{ value_json.btnSt }}
+                {% else %}
+                  {% if value_json.isSw==1 %}
+                    Switched_{{ value_json.btnSt }}
+                  {% else %}
+                    {{ value_json.btnSt }}
+                  {% endif %}
+                {% endif %} 
+              {% endif %}
+    
+  ######################## PIR #########################################
+  - platform: mqtt
+    name: c4p1 #friendly_name: "PIR Garderoba"
+    state_topic: "info/c4/c4p1"
+    unit_of_measurement: 'PIR'
+    value_template: "{% if value_json.isSw==1 and value_json.btnSt=='r'%} Ruch {% else %} Cisza {% endif %}"
+  
+  - platform: mqtt
+    name: c4p2 #friendly_name: "PIR Garderoba"
+    state_topic: "info/c4/c4p2"
+    unit_of_measurement: 'PIR'
+    value_template: "{% if value_json.isSw==1 and value_json.btnSt=='r'%} Ruch {% else %} Cisza {% endif %}"
+  
+  - platform: mqtt
+    name: c4p3 #friendly_name: "PIR Garderoba"
+    state_topic: "info/c4/c4p3"
+    unit_of_measurement: 'PIR'
+    value_template: "{% if value_json.isSw==1 and value_json.btnSt=='r'%} Ruch {% else %} Cisza {% endif %}"
+  
+  - platform: mqtt
+    name: c4p4 #friendly_name: "PIR Garderoba"
+    state_topic: "info/c4/c4p4"
+    unit_of_measurement: 'PIR'
+    value_template: "{% if value_json.isSw==1 and value_json.btnSt=='r'%} Ruch {% else %} Cisza {% endif %}"
+  
+  - platform: mqtt
+    name: c4p5 #friendly_name: "PIR Garderoba"
+    state_topic: "info/c4/c4p5"
+    unit_of_measurement: 'PIR'
+    value_template: "{% if value_json.isSw==1 and value_json.btnSt=='r'%} Ruch {% else %} Cisza {% endif %}"
+  

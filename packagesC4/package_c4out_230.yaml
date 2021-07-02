@@ -1,0 +1,75 @@
+
+#{"name":"c4s1","dev":"c4s1","v":0,"state":"ON","isFad":0,"aimV":0,"isW8t4Chng":1,"futSt":100,"ttc":7.0}
+
+light:
+  
+  ######################## test wlaczenia na czas ###################
+ # - platform: mqtt
+ #   name: C4S1czasowy
+ #   schema: template
+ #   command_topic: "set/light/c4/s1"
+ #   command_on_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"ON\",\"futSt\":\"OFF\",\"ttc\":7}"
+ #   command_off_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+ #   state_topic: "info/c4/c4s1"
+ #   state_template: "{{ value_json.state | lower }}"
+ #   retain: true
+
+  ############################ koniec testu ##########################
+
+  ############################## 230V ###############################
+  - platform: mqtt
+    #friendly_name: "Światło garderoba - sypialnia"
+    name: c4s1
+    schema: template
+    command_topic: "set/light/c4/s1"
+    command_on_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s1"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+    
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s2
+    schema: template
+    command_topic: "set/light/c4/s2"
+    command_on_template: "{\"out\":\"s2\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s2\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s2"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s3
+    schema: template
+    command_topic: "set/light/c4/s3"
+    command_on_template: "{\"out\":\"s3\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s3\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s3"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s4
+    schema: template
+    command_topic: "set/light/c4/s4"
+    command_on_template: "{\"out\":\"s4\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s4\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s4"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4s5
+    schema: template
+    command_topic: "set/light/c4/s5"
+    command_on_template: "{\"out\":\"s5\",\"c\":\"c4\",\"set\":\"ON\"}"
+    command_off_template: "{\"out\":\"s5\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4s5"
+    state_template: "{{ value_json.state | lower }}"
+    retain: true
+  
+    ###################### 230v Koniec ########################

@@ -1,0 +1,7 @@
+
+sensor:
+  - platform: mqtt
+    name: c4ping
+    #friendly_name: "c4Ping"
+    state_topic: "c4/Ping/"
+    unit_of_measurement: 'czas'

@@ -1,0 +1,62 @@
+
+#{"name":"c4s1","dev":"c4s1","v":0,"state":"ON","isFad":0,"aimV":0,"isW8t4Chng":1,"futSt":100,"ttc":7.0}
+
+light:
+     ################################ PWM #######################
+  - platform: mqtt
+    #friendly_name: "Światło łazienka - sypialnia"
+    name: c4pwm1
+    schema: template
+    command_topic: "set/light/c4/pwm1"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm1","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}
+      {% else %}"ON"{% endif %}{%- if transition is defined -%},"dur":{{ transition | round(1) }} {% endif %}}
+    command_off_template: "{\"out\":\"pwm1\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm1"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+    #friendly_name: "Światło przedpokój"
+    name: c4pwm2
+    schema: template
+    command_topic: "set/light/c4/pwm2"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm2","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}
+      {% else %}"ON"{% endif %}{%- if transition is defined -%},"dur":{{ transition | round(1) }} {% endif %}}
+    command_off_template: "{\"out\":\"pwm2\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm2"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+    #friendly_name: "Światło garderoba"
+    name: c4pwm3
+    schema: template
+    command_topic: "set/light/c4/pwm3"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm3","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}
+      {% else %}"ON"{% endif %}{%- if transition is defined -%},"dur":{{ transition | round(1) }} {% endif %}}
+    command_off_template: "{\"out\":\"pwm3\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm3"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+  - platform: mqtt
+     #friendly_name: "Światło garderoba 2"
+    name: c4pwm4
+    schema: template
+    command_topic: "set/light/c4/pwm4"                                  # state_attr('light.c4pwm1', 'brightness') | int 
+    command_on_template: >-  
+      {"out":"pwm4","c":"c4","set": {%- if brightness is defined -%} "PWM","pwm": {{ (brightness*100/255) | int }}
+      {% else %}"ON"{% endif %}{%- if transition is defined -%},"dur":{{ transition | round(1) }} {% endif %}}
+    command_off_template: "{\"out\":\"pwm4\",\"c\":\"c4\",\"set\":\"OFF\"}"
+    state_topic: "info/c4/c4pwm4"
+    state_template: "{{ value_json.state | lower }}"
+    brightness_template: "{{ value_json.v*255/100 }}"
+    retain: true
+
+    ################################ PWM Koniec ################
