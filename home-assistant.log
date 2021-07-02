@@ -1,7 +1,0 @@
-2021-07-02 06:39:24 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration sonoff which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-07-02 06:39:24 WARNING (SyncWorker_1) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
-2021-07-02 06:40:03 ERROR (MainThread) [custom_components.hacs] thomasloven/lovelace-dummy-entity-row - Repository is archived.
-2021-07-02 08:02:28 ERROR (Thread-7) [pychromecast.socket_client] [MIBOX4(192.168.1.243):8009] Failed to connect to service ServiceInfo(type='mdns', data='MIBOX4-cd5e9d2d6a6bfbaa3c9581f71a100da5._googlecast._tcp.local.'), retrying in 5.0s
-2021-07-02 11:02:09 WARNING (Thread-7) [pychromecast.socket_client] [MIBOX4(192.168.1.243):8009] Heartbeat timeout, resetting connection
-2021-07-02 11:02:39 ERROR (Thread-7) [pychromecast.socket_client] [MIBOX4(192.168.1.243):8009] Failed to connect to service ServiceInfo(type='host', data=('192.168.1.243', 8009)), retrying in 5.0s
-2021-07-02 11:48:06 ERROR (MainThread) [homeassistant.components.upnp] Timeout fetching Xiaomi Mi R3G Wireless Router data
